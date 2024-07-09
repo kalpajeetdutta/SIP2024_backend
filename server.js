@@ -17,4 +17,4 @@ app.use(cors({
 app.use('/api/data', dataRouter)
 app.use('/api/contact', contactRouter)
 
-mongoose.connect("mongodb://localhost:27017/").then(() => app.listen(PORT)).then(() => console.log("Connected successfully on PORT: 8080"))
+mongoose.connect(process.env.MONGO_DB_URL).then(() => app.listen(PORT)).then(() => console.log("Connected successfully on PORT: 8080"))
